@@ -161,3 +161,4 @@ static inline int NTC10K3455LO10K(int x) {
 	if (x < 100) return 0;
 	return (x < 2762 ? (x - 1650) * 36 + 25600 : (x - 3036) * 151 + 107130) >> 8;
 }
+void Ctrl_Dir(void);

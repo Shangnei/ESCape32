@@ -593,3 +593,14 @@ void playsound(const char *buf, int vol) { // AU file format, 8-bit linear PCM, 
 	resetcom();
 	busy = 0;
 }
+
+void Ctrl_Dir(void)
+{
+	gpio_mode_setup(GPIOB,GPIO_MODE_INPUT,GPIO_PUPD_PULLUP,GPIO7);
+
+	if(gpio_get(GPIOB,GPIO7))
+		cfg.revdir = 0;
+	else
+		cfg.revdir = 1;
+
+}
